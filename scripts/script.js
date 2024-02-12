@@ -34,6 +34,7 @@ let complete = [];
 getArrays();
 
 addTaskBtn.addEventListener('click', () => {
+    warning.innerText = "";
     if(taskName.value == "" || taskDesc.value == ""){
         warning.innerText = "Please fill out all the fields.";
     }

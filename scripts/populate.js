@@ -47,7 +47,7 @@ function createTaskDisplay(task, parent){
     container.appendChild(name);
 
     let priori = document.createElement("h5");
-    priori.innerText = "Priority: " + task.priority;
+    priori.innerText = task.priority + " Priority";
     priori.className = task.priority;
     container.appendChild(priori);
 
@@ -112,15 +112,13 @@ function edit(task){
     taskDescEdit.value = task.description;
     listEdit.value = task.priority;
 
-    console.log("Edit mode");
-
     deleteTask.addEventListener('click', function(e){
         switch(task.status){
             case "toDo": 
                 toDo.splice(toDo.indexOf(task), toDo.indexOf(task)+1);
             break;
             case "inProgress": 
-                inProgress.splice(toDo.indexOf(task), inProgress.indexOf(task)+1);
+                inProgress.splice(inProgress.indexOf(task), inProgress.indexOf(task)+1);
             break;
                 case "complete": 
                 complete.splice(complete.indexOf(task), complete.indexOf(task)+1);
