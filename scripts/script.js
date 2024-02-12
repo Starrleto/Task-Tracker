@@ -60,9 +60,11 @@ function reset(){
 }
 
 function getArrays(){
-    toDo = JSON.parse(localStorage.getItem("toDo"));
-    inProgress = JSON.parse(localStorage.getItem("inProgress"));
-    complete = JSON.parse(localStorage.getItem("complete"));
+    if(localStorage.getItem("toDo") != null && localStorage.getItem("inProgress") != null && localStorage.getItem("complete") != null){
+        toDo = JSON.parse(localStorage.getItem("toDo"));
+        inProgress = JSON.parse(localStorage.getItem("inProgress"));
+        complete = JSON.parse(localStorage.getItem("complete"));
+    }
     console.log(toDo);
     console.log(inProgress);
     console.log(complete);
